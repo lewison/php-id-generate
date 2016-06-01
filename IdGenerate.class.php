@@ -2,7 +2,7 @@
 /**
  * ID 生成策略
  * 毫秒级时间41位+机器ID10位+毫秒内序列10位+版本号2位
- * 0         41     51         62        64
+ * 0           41      51          62      64
  * +-----------+-------+-----------+--------+
  * |timestamp  |worker |sequence   |version |
  * +-----------+-------+-----------+--------+
@@ -65,7 +65,7 @@ class IdGenerate {
      * @author: Lewison(lewisonchen@gmail.com)
      * @version: 1.0
      * @param $params
-     * @return IdPool|null
+     * @return IdGenerate|null
      */
     public static function getInstance($params) {
         if (isset($params['work_id'])) {
@@ -73,7 +73,7 @@ class IdGenerate {
         }
 
         if (empty(self::$_instance[$params['work_id']])) {
-            self::$_instance[$params['work_id']] = new IdPool($params);
+            self::$_instance[$params['work_id']] = new IdGenerate($params);
         }
 
         return self::$_instance[$params['work_id']];
