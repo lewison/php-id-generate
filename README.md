@@ -1,5 +1,5 @@
 # id-generate-php
-A PHP library for generating unique 64 bit ID, just like the snowflake which design by twitter. The ID contains timestamp, worker,  sequence and version
+A PHP library for generating unique 64 bit ID, just like the snowflake which design by twitter. The ID contains timestamp, worker,  sequence and version.
 Compare to snowflake, this library is not a network ID generate. It ensure to generate a uniq Id in one machine but maybe not in cluster network;
 
 
